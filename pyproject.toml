@@ -1,0 +1,86 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aegis-sec"
+version = "0.2.0"
+description = "Universal & Modular Cybersecurity CLI/TUI Framework for Reconnaissance, Auditing, Forensics, Traffic Analysis, Fuzzing, and Hardening."
+readme = "README.md"
+authors = [
+    { name = "Belalingbi Steve", email = "belalingbi@users.noreply.github.com" }
+]
+license = { text = "MIT" }
+requires-python = ">=3.9"
+keywords = [
+    "cybersecurity",
+    "infosec",
+    "pentesting",
+    "reconnaissance",
+    "forensics",
+    "vulnerability-scanner",
+    "network-security",
+    "threat-intelligence",
+    "cve",
+    "hardening",
+    "osint",
+    "security-tools"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: MacOS",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: System :: Networking :: Monitoring",
+    "Topic :: System :: Systems Administration",
+]
+
+dependencies = [
+    "click>=8.1.0",
+    "rich>=13.7.0",
+    "requests>=2.31.0",
+    "psutil>=5.9.0",
+    "textual>=0.40.0",
+    "scapy>=2.5.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-cov>=4.1.0",
+    "bandit>=1.7.5",
+    "flake8>=6.1.0",
+    "black>=23.9.0",
+]
+
+[project.scripts]
+aegis = "aegis.cli:main"
+aegis-sec = "aegis.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/Belalingbi/aegis"
+Documentation = "https://github.com/Belalingbi/aegis#readme"
+Repository = "https://github.com/Belalingbi/aegis.git"
+Issues = "https://github.com/Belalingbi/aegis/issues"
+
+[tool.setuptools.packages.find]
+include = ["aegis*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
